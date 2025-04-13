@@ -1,8 +1,9 @@
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeManager {
-    public List<Employee> employees = new ArrayList<>();
+    private final List<Employee> employees = new ArrayList<>();
 
     public void addEmployee(Employee e) {
         employees.add(e);
@@ -13,7 +14,7 @@ public class EmployeeManager {
     }
 
     public Employee searchEmployeeByName(String name) {
-        for (Employee e: employees) {
+        for (Employee e : employees) {
             if (e.getName().equalsIgnoreCase(name)) {
                 return e;
             }
@@ -25,10 +26,9 @@ public class EmployeeManager {
         if (employees.isEmpty()) {
             System.out.println("No employees found.");
         } else {
-            for (Employee e: employees) {
+            for (Employee e : employees) {
                 System.out.println(e);
             }
         }
     }
-
 }

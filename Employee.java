@@ -1,11 +1,18 @@
 public class Employee {
+    private static int nextId = 1;
+    private final int id;
+    private String name, role;
     private int age;
-    private String name, role; 
 
     public Employee(String name, int age, String role) {
+        this.id = nextId++;
         this.name = name;
         this.age = age;
         this.role = role;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -16,13 +23,12 @@ public class Employee {
         return age;
     }
 
-    public String getRole(){
+    public String getRole() {
         return role;
     }
 
     @Override
     public String toString() {
-        return "Name: " + name + ", Role: " + role + ", Age: " + age;
+        return "ID: " + id + ", Name: " + name + ", Role: " + role + ", Age: " + age;
     }
-
 }
